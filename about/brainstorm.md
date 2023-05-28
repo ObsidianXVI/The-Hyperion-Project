@@ -1,0 +1,22 @@
+# Brainstorm
+
+- Autonomic computing: enable systems to become resilient
+- Ways to make systems autonomic:
+    - Design patterns in programming languages
+        - Might need a specialised language for AC-purpose
+            - Integrate with other langs (instead of SDKs)
+            - Available via cloud platform
+    - Architectures for diff levels of AC
+- Challenges (turned benefits):
+    - Knowledge bases (ontologies) that not everyone can collect manage [main reason]
+        - More ppl use a centralised platform, more effective knowledge bases
+    - Central place for community-based R&D (like DarkMatter)
+        - More ppl use a centralised platform, more data collected for research
+    - Economies of scale
+    - Difficult to convert existing systems to AC
+        - Plug-and-play type migration to AC
+    - Difficult to build testing arch
+        - Markhor
+    - Heavy use of AI to support various parts of AC arch
+        - Cloud platform absorbs complexity of customising, maintaining AI models
+    - Cost estimation, pricing?
