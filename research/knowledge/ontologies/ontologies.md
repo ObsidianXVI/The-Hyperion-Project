@@ -20,12 +20,10 @@ A more AC-related definition (AC Springer TB, pg2):
 > The ontology used by an autonomic manager includes objects like components, data structures, events, files, libraries, operating systems and functions relating these different objects in some points in time. But it also contains concepts like requirements, traceability links and deployment strategies, pertaining to the initial phases of software development.
 
 ### Our Definition
-> An ontology is a collection of information about a particular field, and this information can be about object properties, actions and their corresponding results, relations between ontological elements, as well as implementation details for the AS to use the knowledge.
+> An ontology is a collection of information about a particular field, including object properties, actions and their corresponding results, relations between ontological elements, as well as implementation details for the AS to use the knowledge.
 
 
 ## Knowledge
-*What is knowledge?*
-
 *What are the different types of knowledge?*
 
 Knowledge is an extremely broad topic in philosophy, but in AC, we can scope out the applications for each type of knowledge:
@@ -47,12 +45,31 @@ Knowledge is an extremely broad topic in philosophy, but in AC, we can scope out
 ## Representation
 *What information do we want to represent?*
 
+Let's take the field of Networks as an example and say we want to make API calls to HTTP endpoints. When even talking about HTTP requests and all that, what do we even mean when we say "I know how to implement networking features in the system"? Perhaps any of the following:
+- Knowing how to create and send HTTP requests (procedural knowledge)
+    - using language libraries (explicit knowledge)
+- Knowing how to parse the response (procedural knowledge)
+- Knowing how to handle HTTP errors (implicit knowledge)
+- Knowing how the different parameters affect the resource's features (declarative knowledge)
+
 *How will this information be stored?*
+
+The first thing that comes to mind when "data storage" is mentioned is obviously databases. But using only databases, in my opinion, might not be efficient for the task, since the AS will have to perform large queries every other second. Instead some knowledge should be stored in a database, which the AS can reference to aid its decision-making, while the rest is stored within the AS, as native code.
+
+Let us put aside the "native knowledge" (so to speak) for now, and focus on the knowledge stored on the "imported knowledge" (stored in the database). We need to come up with the schema for four different types of knowledge (this will be done further down in the section titled [Knowledge Schemas](#knowledge-schemas)):
+- implicit
+- explicit
+- procedural
+- declarative
 
 *How will the information integrate with the AS?*
 
+Stored as a separate repository, the ontological information can be looked up by Intelligence by filtering through meta information. An AS would then be able to handle reification of the knowledge through Mutability.
+
 ## Manipulation
 *How will the information be updated by different sources?*
+
+The ontologies can be updated by the AS, but changes will remain local, and will be overwritten next time the ontology is fetched from the Autonomic Knowledge Registry (AKR). Local changes can help finetune the ontology for the current use case.
 
 
 # Developments In The Field
@@ -63,4 +80,6 @@ Knowledge is an extremely broad topic in philosophy, but in AC, we can scope out
 - [Description Logic](https://www.cs.toronto.edu/~jm/2507S/Notes04/DL.pdf)
 - [Cyc](https://en.wikipedia.org/wiki/Cyc)
 
-Other projects that are related ontologies, such as [RIF](https://en.wikipedia.org/wiki/Rule_Interchange_Format) lean more into reasoning and inference than knowledge representation, and are therefore omitted here.
+Other projects that are related ontologies, such as [RIF](https://en.wikipedia.org/wiki/Rule_Interchange_Format) lean more into reasoning and inference than knowledge representation, and are therefore omitted from the list above.
+
+# Knowledge Schemas
