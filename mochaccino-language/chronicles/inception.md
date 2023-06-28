@@ -4,7 +4,7 @@
 
 ## Analysing Current Limitations
 
-Let's analyse the pros and cons of current languages, and where they fall short in terms of AC needs. We will use the AIM theory to first list out needs and featuresof an Autonomic System:
+Let's analyse the pros and cons of current languages, and where they fall short in terms of AC needs. We will use the AIM theory to first list out needs and features of an Autonomic System:
 - intelligence
     -  knowledge
         - processing ontologies
@@ -29,7 +29,7 @@ Let's analyse the pros and cons of current languages, and where they fall short 
 - mutability
     - different levels of autonomicity require diff levels of mutability
     - hot-swapping components while preserving state
-        separating state from action
+    - separating state from action
 
 
 ## Visualising the Perfect Solution
